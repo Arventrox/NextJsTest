@@ -10,8 +10,10 @@ export const theme = {
   grayEA: "#EAEAEA",
   gray70: "#707070",
   gray37: "#372B25",
+
   hover: {
     main: "#E2E2E2",
+    secondary: "#006efd",
   },
   typography: {
     bigHeading: {},
