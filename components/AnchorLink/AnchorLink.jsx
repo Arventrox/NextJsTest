@@ -1,5 +1,5 @@
 import { StyledLink } from "./elements";
 
-export const ExternalLink = ({ ...props }) => {
+export const AnchorLink = ({ ...props }) => {
   return <StyledLink {...props} />;
 };

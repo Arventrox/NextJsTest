@@ -1,19 +1,18 @@
 import Image from "next/image";
 
 import {
-  StyledTextContainer,
   StyledContainer,
+  StyledTextContainer,
   StyledTitle,
-  StyledDescription,
+  StyledSubheading,
   StyledImageContainer,
-  StyledContentContainer,
-  StyledItemsContainer,
-  StyledItems,
-  StyledImageSubContainer,
-  StyledTextSubContainer,
+  StyledArticleContainer,
+  StyledListContainer,
+  StyledListItem,
+  StyledLink,
   StyledSectionInnerHeading,
   StyledParagraph,
-  StyledWord,
+  StyledText,
 } from "./elements";
 
 export const Main = ({ image, title, description, content, ...props }) => {
@@ -22,7 +21,7 @@ export const Main = ({ image, title, description, content, ...props }) => {
     const words = description.split(regex);
     const boldedWords = words.reduce((result, word, index) => {
       if (index !== 0) {
-        result.push(<StyledWord key={index}>{wordsToBold}</StyledWord>);
+        result.push(<StyledText key={index}>{wordsToBold}</StyledText>);
       }
       result.push(word);
 
@@ -33,35 +32,37 @@ export const Main = ({ image, title, description, content, ...props }) => {
   };
 
   return (
-    <StyledContainer {...props}>
+    <StyledContainer {...props} topMargin="8" bottomMargin="5">
       <StyledTextContainer>
         <StyledTitle>{title}</StyledTitle>
-        <StyledDescription>{description}</StyledDescription>
+        <StyledSubheading>{description}</StyledSubheading>
       </StyledTextContainer>
-      <StyledContentContainer>
-        <StyledImageContainer>
+      <StyledArticleContainer topMargin="3">
+        <StyledImageContainer maxWidth={image.maxWidth} maxHeight={image.maxHeight}>
           <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
         </StyledImageContainer>
-        <StyledItemsContainer>
+        <StyledListContainer>
           {content.map((item, index) => (
-            <StyledItems key={index} {...props}>
-              <StyledImageSubContainer>
-                <Image
-                  layout="responsive"
-                  src={item.image.src}
-                  alt={item.image.alt}
-                  width={item.image.width}
-                  height={item.image.height}
-                />
-              </StyledImageSubContainer>
-              <StyledTextSubContainer>
-                <StyledSectionInnerHeading>{item.title}</StyledSectionInnerHeading>
-                <StyledParagraph>{boldWords(item.description, item.wordsToBold)}</StyledParagraph>
-              </StyledTextSubContainer>
-            </StyledItems>
+            <StyledListItem key={index} maxWidth={item.maxWidth} backgroundColor={item.backgroundColor}>
+              <StyledLink href={item.link} target="_blank">
+                <StyledImageContainer maxWidth={item.image.maxWidth} maxHeight={item.image.maxHeight} scale="0.6">
+                  <Image
+                    layout="responsive"
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    width={item.image.width}
+                    height={item.image.height}
+                  />
+                </StyledImageContainer>
+                <StyledTextContainer align="left">
+                  <StyledSectionInnerHeading>{item.title}</StyledSectionInnerHeading>
+                  <StyledParagraph>{boldWords(item.description, item.wordsToBold)}</StyledParagraph>
+                </StyledTextContainer>
+              </StyledLink>
+            </StyledListItem>
           ))}
-        </StyledItemsContainer>
-      </StyledContentContainer>
+        </StyledListContainer>
+      </StyledArticleContainer>
     </StyledContainer>
   );
 };

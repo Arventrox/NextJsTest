@@ -3,14 +3,13 @@ import styled from "styled-components";
 export const StyledListItem = styled(({ maxWidth = 0, margin = 0, padding = 0, color, backgroundColor, ...props }) => (
   <li {...props} />
 ))`
+  max-width: ${({ maxWidth }) => maxWidth}rem;
+  width: 100%;
   margin: ${({ margin }) => margin}rem;
   padding: ${({ padding }) => padding}rem;
   background-color: ${({ backgroundColor }) => backgroundColor};
   color: ${({ color }) => color};
-  width: 100%;
-  max-width: ${({ maxWidth }) => maxWidth}%;
   border: 2px solid transparent;
-  text-decoration: none;
   border-radius: 0.5rem;
 
   &:hover {

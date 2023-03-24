@@ -6,66 +6,56 @@ import {
   SectionParagraph,
   SectionInnerHeading,
   ListItem,
+  AnchorLink,
+  ListContainer,
+  ImageContainer,
+  TextContainer,
 } from "~/components";
-import { ListContainer } from "../../components";
 
 export const StyledContainer = styled(({ height, ...props }) => <SectionContainer {...props} />)`
-  align-items: center;
-  margin-top: 8rem;
-  margin-bottom: 5rem;
-  display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 
   @media screen and (max-width: 1023px) {
   }
 `;
 
-export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
-  color: black;
-  font-family: sans-serif;
-  display: flex;
-  align-items: center;
+export const StyledTextContainer = styled(({ ...props }) => <TextContainer {...props} />)`
   flex-direction: column;
   justify-content: center;
 `;
 
 export const StyledTitle = styled((props) => <SectionBigHeading {...props} />)`
-  margin: 0;
-  color: black;
+  color: ${({ theme }) => theme.black};
   text-align: center;
+  margin: 0;
 `;
 
-export const StyledDescription = styled((props) => <SectionSubheading {...props} />)`
+export const StyledSubheading = styled((props) => <SectionSubheading {...props} />)`
   font-weight: 400;
   margin: 0;
 `;
 
-export const StyledImageContainer = styled(({ ...props }) => <div {...props} />)`
-  max-width: 23rem;
-  max-height: 46rem;
-  width: 100%;
-  height: 100%;
+export const StyledImageContainer = styled(({ scale = 1, ...props }) => <ImageContainer {...props} />)`
+  scale: ${({ scale }) => scale};
 
-  @media screen and (max-width: 1023px) {
+  /* @media screen and (max-width: 1023px) {
     max-width: 16rem;
     max-height: 32rem;
-  }
+  } */
 `;
 
-export const StyledContentContainer = styled(({ height, ...props }) => <SectionContainer {...props} />)`
+export const StyledArticleContainer = styled(({ ...props }) => <SectionContainer {...props} />)`
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+
   background-image: url("/img/background.png");
   background-size: contain;
   background-position: 8rem;
   background-repeat: no-repeat;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin-top: 3rem;
-  gap: 5rem;
 
   @media screen and (max-width: 1023px) {
     background-position: -5rem 1.5rem;
@@ -73,47 +63,18 @@ export const StyledContentContainer = styled(({ height, ...props }) => <SectionC
   }
 `;
 
-export const StyledItemsContainer = styled(({ ...props }) => <ListContainer {...props} />)`
+export const StyledListContainer = styled(({ ...props }) => <ListContainer {...props} />)`
   display: grid;
   grid-auto-flow: row dense;
   grid-gap: 2rem;
-
-  /* & > :nth-child(1) {
-    max-width: 31rem;
-    background-color: #f9f9f9;
-  }
-
-  & > *:nth-child(2) {
-    max-width: 33rem;
-    background-color: #f4f4f4;
-  }
-
-  & > *:nth-child(3) {
-    max-width: 35rem;
-    background-color: #f1f1f1;
-  } */
 `;
 
-export const StyledItems = styled(({ ...props }) => <ListItem {...props} />)`
-  display: flex;
+export const StyledListItem = styled(({ ...props }) => <ListItem {...props} />)``;
+
+export const StyledLink = styled(({ ...props }) => <AnchorLink {...props} />)`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-`;
-
-export const StyledImageSubContainer = styled(({ ...props }) => <div {...props} />)`
-  max-width: 10rem;
-  max-height: 10rem;
-  width: 100%;
-  height: 100%;
-  scale: 0.6;
-`;
-
-export const StyledTextSubContainer = styled(({ ...props }) => <div {...props} />)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 2rem;
 `;
 
 export const StyledSectionInnerHeading = styled(({ ...props }) => <SectionInnerHeading {...props} />)`
@@ -129,6 +90,6 @@ export const StyledParagraph = styled(({ ...props }) => <SectionParagraph {...pr
   font-weight: 450;
 `;
 
-export const StyledWord = styled(({ ...props }) => <span {...props} />)`
+export const StyledText = styled(({ ...props }) => <span {...props} />)`
   font-weight: bold;
 `;
