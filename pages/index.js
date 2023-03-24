@@ -7,58 +7,38 @@ const heroProps = {
   ctaText: "Start",
 };
 
-// const mainProps = {
-//   title: "Managed agency selection.",
-//   description: "Strengthen your onboarding process",
-//   image: { src: "/img/video.png", alt: "", width: 1000, height: 1680 },
-//   content: [
-//     {
-//       title: "Brief",
-//       description: "Complete brief writing or simple guidance on what to include, we've got you covered.",
-//       image: { src: "/img/image-1.png", alt: "", width: 91, height: 91 },
-//       backgroundColor: "#F0F0F0",
-//     },
-
-//     {
-//       title: "Search",
-//       description: "In-depth agency search covering; criteria matching, door knocking and due-diligence vetting.",
-//       image: { src: "/img/image-2.png", alt: "", width: 91, height: 91 },
-//       backgroundColor: "#8D8F92",
-//     },
-//     {
-//       title: "Pitch",
-//       description: "Comprehensive pitch management, including comms, diary management and pitch hosting.",
-//       image: { src: "/img/image-3.png", alt: "", width: 91, height: 91 },
-//       backgroundColor: "#8D8F92",
-//     },
-//   ],
-// };
-
 const mainProps = {
   title: "Managed agency selection",
   description: "Strengthen your onboarding process",
   image: { src: "/img/video.png", alt: "", width: 1000, height: 1680 },
-  content: {
-    item1: {
+  content: [
+    {
       title: "Brief",
       description: "Complete brief writing or simple guidance on what to include, we've got you covered.",
       image: { src: "/img/image-1.png", alt: "", width: 91, height: 91 },
       wordsToBold: "brief writing or simple guidance",
+      backgroundColor: "31",
+      maxWidth: "#f9f9f9",
+      link: "https://www.briefbuilder.com",
     },
 
-    item2: {
+    {
       title: "Search",
       description: "In-depth agency search covering; criteria matching, door knocking and due-diligence vetting.",
       image: { src: "/img/image-2.png", alt: "", width: 91, height: 91 },
       wordsToBold: "criteria matching",
+      backgroundColor: "#f4f4f4",
+      maxWidth: "33",
     },
-    item3: {
+    {
       title: "Pitch",
       description: "Comprehensive pitch management, including comms, diary management and pitch hosting.",
       image: { src: "/img/image-3.png", alt: "", width: 91, height: 91 },
       wordsToBold: "pitch management",
+      backgroundColor: "#f1f1f1",
+      maxWidth: "35",
     },
-  },
+  ],
 };
 
 export default function Home() {
