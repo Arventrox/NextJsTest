@@ -10,34 +10,28 @@ const heroProps = {
 const mainProps = {
   title: "Managed agency selection",
   description: "Strengthen your onboarding process",
-  image: { src: "/img/video.png", alt: "", width: 1000, height: 1680, maxWidth: 23, maxHeight: 46 },
+  image: { src: "/img/video.png", alt: "", width: 1000, height: 1680 },
   content: [
     {
-      title: "Brief",
-      description: "Complete brief writing or simple guidance on what to include, we've got you covered.",
-      image: { src: "/img/image-1.png", alt: "", width: 91, height: 91, maxWidth: 10, maxHeight: 10 },
+      heading: "Brief",
+      text: "Complete brief writing or simple guidance on what to include, we've got you covered.",
+      image: { src: "/img/image-1.png", alt: "", width: 91, height: 91 },
       wordsToBold: "brief writing or simple guidance",
-      backgroundColor: "#f9f9f9",
-      maxWidth: "31",
-    },
-
-    {
-      title: "Search",
-      description: "In-depth agency search covering; criteria matching, door knocking and due-diligence vetting.",
-      image: { src: "/img/image-2.png", alt: "", width: 91, height: 91, maxWidth: 10, maxHeight: 10 },
-      wordsToBold: "criteria matching",
-      backgroundColor: "#f4f4f4",
-      maxWidth: "33",
-    },
-
-    {
-      title: "Pitch",
-      description: "Comprehensive pitch management, including comms, diary management and pitch hosting.",
-      image: { src: "/img/image-3.png", alt: "", width: 91, height: 91, maxWidth: 10, maxHeight: 10 },
-      wordsToBold: "pitch management",
-      backgroundColor: "#f1f1f1",
-      maxWidth: "35",
       link: "https://www.briefbuilder.com",
+    },
+
+    {
+      heading: "Search",
+      text: "In-depth agency search covering; criteria matching, door knocking and due-diligence vetting.",
+      image: { src: "/img/image-2.png", alt: "", width: 91, height: 91 },
+      wordsToBold: "criteria matching",
+    },
+
+    {
+      heading: "Pitch",
+      text: "Comprehensive pitch management, including comms, diary management and pitch hosting.",
+      image: { src: "/img/image-3.png", alt: "", width: 91, height: 91 },
+      wordsToBold: "pitch management",
     },
   ],
 };

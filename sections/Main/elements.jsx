@@ -1,23 +1,13 @@
 import styled from "styled-components";
-import {
-  SectionContainer,
-  SectionBigHeading,
-  SectionSubheading,
-  SectionParagraph,
-  SectionInnerHeading,
-  ListItem,
-  AnchorLink,
-  ListContainer,
-  ImageContainer,
-  TextContainer,
-} from "~/components";
+import { SectionContainer, SectionBigHeading, SectionSubheading, ImageContainer, TextContainer } from "~/components";
 
-export const StyledContainer = styled(({ height, ...props }) => <SectionContainer {...props} />)`
+export const StyledContainer = styled(({ ...props }) => <SectionContainer {...props} />)`
   justify-content: center;
   flex-direction: column;
   align-items: center;
 
   @media screen and (max-width: 1023px) {
+    margin: 2rem 0;
   }
 `;
 
@@ -27,69 +17,59 @@ export const StyledTextContainer = styled(({ ...props }) => <TextContainer {...p
 `;
 
 export const StyledTitle = styled((props) => <SectionBigHeading {...props} />)`
-  color: ${({ theme }) => theme.black};
   text-align: center;
+  line-height: 1.2;
+  font-size: 2.5rem;
+  font-weight: 600;
   margin: 0;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 2.2rem;
+  }
 `;
 
 export const StyledSubheading = styled((props) => <SectionSubheading {...props} />)`
   font-weight: 400;
   margin: 0;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 1.1rem;
+  }
 `;
 
-export const StyledImageContainer = styled(({ scale = 1, ...props }) => <ImageContainer {...props} />)`
-  scale: ${({ scale }) => scale};
+export const StyledImageContainer = styled(({ ...props }) => <ImageContainer {...props} />)`
+  max-width: 20.5rem;
+  max-height: 41rem;
 
-  /* @media screen and (max-width: 1023px) {
-    max-width: 16rem;
-    max-height: 32rem;
-  } */
+  @media screen and (max-width: 1023px) {
+    max-width: 18rem;
+    max-height: 36rem;
+  }
 `;
 
-export const StyledArticleContainer = styled(({ ...props }) => <SectionContainer {...props} />)`
-  flex-wrap: wrap;
+export const StyledMainContainer = styled(({ ...props }) => <SectionContainer {...props} />)`
   align-items: center;
   justify-content: center;
   gap: 5rem;
 
   background-image: url("/img/background.png");
   background-size: contain;
-  background-position: 8rem;
+  background-position: 13.5rem 1.5rem;
   background-repeat: no-repeat;
 
   @media screen and (max-width: 1023px) {
+    flex-direction: column;
+    width: 60%;
+    margin: 3rem auto;
     background-position: -5rem 1.5rem;
     background-size: 50rem;
+    gap: 4rem;
   }
 `;
 
-export const StyledListContainer = styled(({ ...props }) => <ListContainer {...props} />)`
-  display: grid;
-  grid-auto-flow: row dense;
-  grid-gap: 2rem;
-`;
-
-export const StyledListItem = styled(({ ...props }) => <ListItem {...props} />)``;
-
-export const StyledLink = styled(({ ...props }) => <AnchorLink {...props} />)`
-  flex-direction: row;
-  align-items: center;
+export const StyledCardsContainer = styled(({ ...props }) => <div {...props} />)`
+  display: flex;
   justify-content: center;
-`;
-
-export const StyledSectionInnerHeading = styled(({ ...props }) => <SectionInnerHeading {...props} />)`
-  font-weight: bold;
-  font-size: 1.3rem;
-  margin: 0;
-  padding: 0;
-  margin-top: 1rem;
-`;
-
-export const StyledParagraph = styled(({ ...props }) => <SectionParagraph {...props} />)`
-  padding-right: 2rem;
-  font-weight: 450;
-`;
-
-export const StyledText = styled(({ ...props }) => <span {...props} />)`
-  font-weight: bold;
+  flex-direction: column;
+  gap: 2rem;
 `;

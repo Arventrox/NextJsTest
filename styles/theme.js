@@ -13,7 +13,7 @@ export const theme = {
 
   hover: {
     main: "#E2E2E2",
-    secondary: "#006efd",
+    secondary: "#0070f3",
   },
   typography: {
     bigHeading: {},

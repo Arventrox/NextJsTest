@@ -5,6 +5,8 @@ export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
   font-family: sans-serif;
   display: flex;
   align-items: ${({ align }) => align};
+  flex-direction: column;
+  justify-content: center;
 `;
 
 StyledTextContainer.defaultProps = {
