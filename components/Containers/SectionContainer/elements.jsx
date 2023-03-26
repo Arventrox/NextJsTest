@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledSectionContainer = styled(({ topMargin = 0, bottomMargin = 0, ...props }) => <div {...props} />)`
+export const StyledSectionContainer = styled(({ topMargin = 0, bottomMargin = 0, ...props }) => <section {...props} />)`
   display: flex;
   max-width: 1920px;
   width: 100%;

@@ -15,9 +15,13 @@ import {
 export const Card = ({ image, heading, text, wordsToBold, link, index }) => {
   const [boldedWords, setBoldedWords] = useState();
   const isAbove1024px = useMediaQuery("(min-width: 1023px)");
-  const isTargetLink = link && "_blank";
 
   useEffect(() => {
+    const boldedWords = getBoldedWords(text, wordsToBold);
+    setBoldedWords(boldedWords);
+  }, [text, wordsToBold]);
+
+  const getBoldedWords = (text, wordsToBold) => {
     const regex = new RegExp(wordsToBold, "gi");
     const words = text.split(regex);
     const boldedWords = words.reduce((result, word, index) => {
@@ -25,8 +29,9 @@ export const Card = ({ image, heading, text, wordsToBold, link, index }) => {
       result.push(word);
       return result;
     }, []);
-    setBoldedWords(boldedWords);
-  }, [text, wordsToBold]);
+
+    return boldedWords;
+  };
 
   const getMaxWidth = () => {
     const initialMaxWidth = isAbove1024px ? 27 : 24;
@@ -40,16 +45,30 @@ export const Card = ({ image, heading, text, wordsToBold, link, index }) => {
   };
 
   return (
-    <StyledCardContainer maxWidth={getMaxWidth} backgroundColor={getBackgroundColor}>
-      <StyledLink href={link} target={isTargetLink} link={link}>
-        <StyledImageContainer maxWidth={image.maxWidth} maxHeight={image.maxHeight}>
-          <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
-        </StyledImageContainer>
-        <StyledTextContainer align="left">
-          <StyledHeadingContainer>{heading}</StyledHeadingContainer>
-          <StyledParagraph>{boldedWords}</StyledParagraph>
-        </StyledTextContainer>
-      </StyledLink>
-    </StyledCardContainer>
+    <>
+      {link ? (
+        <StyledLink url={link.url} target={link.target}>
+          <StyledCardContainer maxWidth={getMaxWidth} backgroundColor={getBackgroundColor}>
+            <StyledImageContainer maxWidth={image.maxWidth} maxHeight={image.maxHeight}>
+              <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
+            </StyledImageContainer>
+            <StyledTextContainer align="left">
+              <StyledHeadingContainer>{heading}</StyledHeadingContainer>
+              <StyledParagraph>{boldedWords}</StyledParagraph>
+            </StyledTextContainer>
+          </StyledCardContainer>
+        </StyledLink>
+      ) : (
+        <StyledCardContainer maxWidth={getMaxWidth} backgroundColor={getBackgroundColor}>
+          <StyledImageContainer maxWidth={image.maxWidth} maxHeight={image.maxHeight}>
+            <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
+          </StyledImageContainer>
+          <StyledTextContainer align="left">
+            <StyledHeadingContainer>{heading}</StyledHeadingContainer>
+            <StyledParagraph>{boldedWords}</StyledParagraph>
+          </StyledTextContainer>
+        </StyledCardContainer>
+      )}
+    </>
   );
 };

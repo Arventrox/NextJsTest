@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SectionParagraph, SectionInnerHeading, AnchorLink, ImageContainer, TextContainer } from "~/components";
+import { SectionParagraph, SectionInnerHeading, Link, ImageContainer, TextContainer } from "~/components";
 
 export const StyledCardContainer = styled(({ maxWidth, backgroundColor, ...props }) => <div {...props} />)`
   max-width: ${({ maxWidth }) => maxWidth}rem;
@@ -9,6 +9,10 @@ export const StyledCardContainer = styled(({ maxWidth, backgroundColor, ...props
   border-radius: 0.5rem;
   transition: color 0.15s ease, border-color 0.15s ease;
   margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     border-color: ${({ theme }) => theme.hover.secondary};
@@ -20,12 +24,7 @@ export const StyledCardContainer = styled(({ maxWidth, backgroundColor, ...props
   }
 `;
 
-export const StyledLink = styled(({ link, ...props }) => (link ? <AnchorLink {...props} /> : <div {...props} />))`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
+export const StyledLink = styled(({ ...props }) => <Link {...props} />)``;
 
 export const StyledTextContainer = styled(({ ...props }) => <TextContainer {...props} />)`
   flex-direction: column;

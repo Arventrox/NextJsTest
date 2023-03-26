@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
+export const StyledTextContainer = styled(({ ...props }) => <header {...props} />)`
   color: black;
   font-family: sans-serif;
   display: flex;

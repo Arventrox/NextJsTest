@@ -12,21 +12,17 @@ import {
   StyledImageHolder,
 } from "./elements";
 
-export const Main = ({ image, title, description, content }, ...props) => {
-  const styledContainerTopMargin = 5;
-  const styledContainerBottomMargin = 10;
-  const styledMainContainerTopMargin = 3;
-
+export const Main = ({ image, title, description, content }) => {
   return (
-    <StyledContainer topMargin={styledContainerTopMargin} bottomMargin={styledContainerBottomMargin} {...props}>
+    <StyledContainer>
       <StyledTextContainer>
         <StyledTitle>{title}</StyledTitle>
         <StyledSubheading>{description}</StyledSubheading>
       </StyledTextContainer>
-      <StyledMainContainer topMargin={styledMainContainerTopMargin}>
+      <StyledMainContainer>
         <StyledImageContainer>
           <StyledImageHolder>
-            <Image layout="intrinsic" src={image.src} alt={image.alt} width={image.width} height={image.height} />
+            <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
           </StyledImageHolder>
         </StyledImageContainer>
         <StyledCardsContainer>
