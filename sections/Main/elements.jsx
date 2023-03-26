@@ -37,33 +37,54 @@ export const StyledSubheading = styled((props) => <SectionSubheading {...props} 
   }
 `;
 
-export const StyledImageContainer = styled(({ ...props }) => <ImageContainer {...props} />)`
-  max-width: 20.5rem;
-  max-height: 41rem;
+export const StyledMainContainer = styled(({ ...props }) => <main {...props} />)`
+  grid-gap: 5rem;
+  width: 70rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem;
 
   @media screen and (max-width: 1023px) {
-    max-width: 18rem;
-    max-height: 36rem;
-  }
-`;
-
-export const StyledMainContainer = styled(({ ...props }) => <SectionContainer {...props} />)`
-  align-items: center;
-  justify-content: center;
-  gap: 5rem;
-
-  background-image: url("/img/background.png");
-  background-size: contain;
-  background-position: 13.5rem 1.5rem;
-  background-repeat: no-repeat;
-
-  @media screen and (max-width: 1023px) {
+    display: flex;
+    align-items: center;
     flex-direction: column;
-    width: 60%;
+    width: 40rem;
     margin: 3rem auto;
     background-position: -5rem 1.5rem;
     background-size: 50rem;
-    gap: 4rem;
+    grid-gap: 0;
+    margin: 0;
+  }
+`;
+
+export const StyledImageContainer = styled(({ ...props }) => <ImageContainer {...props} />)`
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  padding: 1rem;
+
+  background-image: url("/img/background.png");
+  background-size: 60rem;
+  background-position: -2.5rem 2.5rem;
+  background-repeat: no-repeat;
+
+  @media screen and (max-width: 1023px) {
+    justify-content: center;
+    background-position: -1rem 2.5rem;
+    background-size: 52rem;
+  }
+`;
+
+export const StyledImageHolder = styled(({ ...props }) => <ImageContainer {...props} />)`
+  position: relative;
+  max-width: 19rem;
+  padding: 1rem;
+  scale: 1.07 1;
+
+  @media screen and (max-width: 1023px) {
+    max-width: 17rem;
+    scale: 1;
+    padding: 0;
   }
 `;
 
@@ -71,5 +92,5 @@ export const StyledCardsContainer = styled(({ ...props }) => <div {...props} />)
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 2rem;
+  margin-top: 1.25rem;
 `;

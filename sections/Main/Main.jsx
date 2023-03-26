@@ -9,6 +9,7 @@ import {
   StyledImageContainer,
   StyledMainContainer,
   StyledCardsContainer,
+  StyledImageHolder,
 } from "./elements";
 
 export const Main = ({ image, title, description, content }, ...props) => {
@@ -24,7 +25,9 @@ export const Main = ({ image, title, description, content }, ...props) => {
       </StyledTextContainer>
       <StyledMainContainer topMargin={styledMainContainerTopMargin}>
         <StyledImageContainer>
-          <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
+          <StyledImageHolder>
+            <Image layout="intrinsic" src={image.src} alt={image.alt} width={image.width} height={image.height} />
+          </StyledImageHolder>
         </StyledImageContainer>
         <StyledCardsContainer>
           {content.map((item, index) => (

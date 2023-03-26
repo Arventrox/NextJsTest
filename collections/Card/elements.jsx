@@ -8,6 +8,7 @@ export const StyledCardContainer = styled(({ maxWidth, backgroundColor, ...props
   border: 2px solid transparent;
   border-radius: 0.5rem;
   transition: color 0.15s ease, border-color 0.15s ease;
+  margin: 1rem 0;
 
   &:hover {
     border-color: ${({ theme }) => theme.hover.secondary};
@@ -32,21 +33,20 @@ export const StyledTextContainer = styled(({ ...props }) => <TextContainer {...p
 `;
 
 export const StyledImageContainer = styled(({ ...props }) => <ImageContainer {...props} />)`
-  max-width: 6rem;
-  max-height: 6rem;
-  padding: 1.5rem;
+  max-width: 5.2rem;
+  max-height: 5.2rem;
+  padding: 1.6rem;
 
   @media screen and (max-width: 1023px) {
-    max-width: 5rem;
-    max-height: 5rem;
+    padding: 1.4rem;
   }
 `;
 
 export const StyledHeadingContainer = styled(({ ...props }) => <SectionInnerHeading {...props} />)`
-  font-weight: 650;
-  font-size: 1.3rem;
+  font-weight: 600;
+  font-size: 1.22rem;
   margin: 0;
-  margin-top: 1rem;
+  margin-bottom: 0.1rem;
   padding: 0;
 
   @media screen and (max-width: 1023px) {
@@ -57,6 +57,7 @@ export const StyledHeadingContainer = styled(({ ...props }) => <SectionInnerHead
 export const StyledParagraph = styled(({ ...props }) => <SectionParagraph {...props} />)`
   padding-right: 2rem;
   font-weight: 450;
+  margin: 0;
 
   @media screen and (max-width: 1023px) {
     font-size: 0.85rem;
