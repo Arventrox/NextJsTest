@@ -5,19 +5,17 @@ export const StyledContainer = styled(({ ...props }) => <SectionContainer {...pr
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;
-  margin-bottom: 10rem;
+  margin: 7.5rem auto;
 
   @media screen and (max-width: 1023px) {
     margin: 2rem auto;
   }
 `;
 
-export const StyledTextContainer = styled(({ ...props }) => <TextContainer {...props} />)``;
+export const StyledTextContainer = styled(({ ...props }) => <TextContainer alignItems="center" {...props} />)``;
 
 export const StyledTitle = styled((props) => <SectionBigHeading {...props} />)`
   margin: 0;
-  text-align: center;
   font-size: 2.5rem;
   line-height: 1.2;
 
@@ -40,7 +38,6 @@ export const StyledMainContainer = styled(({ ...props }) => <main {...props} />)
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 5rem;
   width: fit-content;
-  padding: 1rem;
   position: relative;
   right: 5rem;
 
@@ -62,7 +59,7 @@ export const StyledImageContainer = styled(({ ...props }) => <ImageContainer {..
 
   background-image: url("/img/background.png");
   background-size: 60rem;
-  background-position: -4.5rem 2.5rem;
+  background-position: -4rem 2.5rem;
   background-repeat: no-repeat;
 
   @media screen and (max-width: 1023px) {
@@ -77,12 +74,10 @@ export const StyledImageHolder = styled(({ ...props }) => <ImageContainer {...pr
   max-width: 19rem;
   padding: 1rem;
   position: relative;
-  scale: 1.07 1;
 
   @media screen and (max-width: 1023px) {
     max-width: 17rem;
     padding: 0;
-    scale: 1;
   }
 `;
 

@@ -5,7 +5,7 @@ export const StyledCardContainer = styled(({ maxWidth, backgroundColor, ...props
   max-width: ${({ maxWidth }) => maxWidth}rem;
   width: 100%;
   background-color: ${({ backgroundColor }) => backgroundColor};
-  border: 2px solid transparent;
+  border: 0.2rem solid transparent;
   border-radius: 0.5rem;
   transition: color 0.15s ease, border-color 0.15s ease;
   margin: 1rem 0;
@@ -27,13 +27,10 @@ export const StyledCardContainer = styled(({ maxWidth, backgroundColor, ...props
 export const StyledLink = styled(({ ...props }) => <Link {...props} />)``;
 
 export const StyledTextContainer = styled(({ ...props }) => <TextContainer {...props} />)`
-  flex-direction: column;
-  justify-content: center;
+  padding-right: 0.2rem;
 `;
 
-export const StyledImageContainer = styled(({ ...props }) => <ImageContainer {...props} />)`
-  max-width: 5.2rem;
-  max-height: 5.2rem;
+export const StyledImageContainer = styled(({ ...props }) => <ImageContainer maxWidth="5.2" maxHeight="5.2" {...props} />)`
   padding: 1.6rem;
 
   @media screen and (max-width: 1023px) {
@@ -44,8 +41,7 @@ export const StyledImageContainer = styled(({ ...props }) => <ImageContainer {..
 export const StyledHeadingContainer = styled(({ ...props }) => <SectionInnerHeading {...props} />)`
   font-weight: 600;
   font-size: 1.22rem;
-  margin: 0;
-  margin-bottom: 0.1rem;
+  margin: 0 0 0.1rem 0;
   padding: 0;
 
   @media screen and (max-width: 1023px) {

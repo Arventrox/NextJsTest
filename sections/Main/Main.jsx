@@ -12,9 +12,9 @@ import {
   StyledImageHolder,
 } from "./elements";
 
-export const Main = ({ image, title, description, content }) => {
+export const Main = ({ image, title, description, content, ...props }) => {
   return (
-    <StyledContainer>
+    <StyledContainer {...props}>
       <StyledTextContainer>
         <StyledTitle>{title}</StyledTitle>
         <StyledSubheading>{description}</StyledSubheading>

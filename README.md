@@ -8,7 +8,13 @@
 
 - 4. Based on the agencyselection.png created the desktop design.
 
-- 5. Created the fun
+- 5. Based on the mobileagencyselection.png created the mobile design.
+
+- 6. Added functions needed for the design and a hook folder with useMediaQuery hook.
+
+- 7. Fixed semantics, styles, cleaned up and rewrote components.
+
+- 8. Added mobile design for the Hero section.
 
 # The section that you need to create is shown in **agencyselection.png**
 

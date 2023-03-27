@@ -49,10 +49,10 @@ export const Card = ({ image, heading, text, wordsToBold, link, index }) => {
       {link ? (
         <StyledLink url={link.url} target={link.target}>
           <StyledCardContainer maxWidth={getMaxWidth} backgroundColor={getBackgroundColor}>
-            <StyledImageContainer maxWidth={image.maxWidth} maxHeight={image.maxHeight}>
+            <StyledImageContainer>
               <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
             </StyledImageContainer>
-            <StyledTextContainer align="left">
+            <StyledTextContainer>
               <StyledHeadingContainer>{heading}</StyledHeadingContainer>
               <StyledParagraph>{boldedWords}</StyledParagraph>
             </StyledTextContainer>
@@ -60,10 +60,10 @@ export const Card = ({ image, heading, text, wordsToBold, link, index }) => {
         </StyledLink>
       ) : (
         <StyledCardContainer maxWidth={getMaxWidth} backgroundColor={getBackgroundColor}>
-          <StyledImageContainer maxWidth={image.maxWidth} maxHeight={image.maxHeight}>
+          <StyledImageContainer>
             <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
           </StyledImageContainer>
-          <StyledTextContainer align="left">
+          <StyledTextContainer>
             <StyledHeadingContainer>{heading}</StyledHeadingContainer>
             <StyledParagraph>{boldedWords}</StyledParagraph>
           </StyledTextContainer>
