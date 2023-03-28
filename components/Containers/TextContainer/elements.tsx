@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const StyledTextContainer = styled(({ alignItems, alignText, ...props }) => <div {...props} />)`
+export const StyledTextContainer = styled(
+  ({ alignItems, alignText, ...props }) => <div {...props} />
+)`
   color: ${({ theme }) => theme.black};
   font-family: sans-serif;
   display: flex;

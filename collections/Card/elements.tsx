@@ -1,18 +1,24 @@
 import styled from "styled-components";
-import { SectionParagraph, SectionInnerHeading, Link, ImageContainer, TextContainer } from "~/components";
+import Image from "next/image";
 
-export const StyledCardContainer = styled(({ maxWidth, backgroundColor, ...props }) => <div {...props} />)`
+import {
+  SectionParagraph,
+  SectionInnerHeading,
+  Link,
+  TextContainer,
+} from "@/components";
+
+export const StyledCardContainer = styled(
+  ({ maxWidth, backgroundColor, ...props }) => <div {...props} />
+)`
   max-width: ${({ maxWidth }) => maxWidth}rem;
-  width: 100%;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  margin: 1rem;
+  display: flex;
+
   border: 0.2rem solid transparent;
   border-radius: 0.5rem;
+  background-color: ${({ backgroundColor }) => backgroundColor};
   transition: color 0.15s ease, border-color 0.15s ease;
-  margin: 1rem 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 
   &:hover {
     border-color: ${({ theme }) => theme.hover.secondary};
@@ -22,15 +28,25 @@ export const StyledCardContainer = styled(({ maxWidth, backgroundColor, ...props
       text-decoration: underline;
     }
   }
+
+  @media screen and (max-width: 1023px) {
+    margin: 1rem 4rem;
+  }
 `;
 
 export const StyledLink = styled(({ ...props }) => <Link {...props} />)``;
 
-export const StyledTextContainer = styled(({ ...props }) => <TextContainer {...props} />)`
+export const StyledTextContainer = styled(({ ...props }) => (
+  <TextContainer {...props} />
+))`
   padding-right: 0.2rem;
 `;
 
-export const StyledImageContainer = styled(({ ...props }) => <ImageContainer maxWidth="5.2" maxHeight="5.2" {...props} />)`
+export const StyledImage = styled(({ width, height, src, alt, ...props }) => (
+  <Image width={width} height={height} src={src} alt={alt} {...props} />
+))`
+  max-height: 5.2rem;
+  max-width: 5.2rem;
   padding: 1.6rem;
 
   @media screen and (max-width: 1023px) {
@@ -38,7 +54,9 @@ export const StyledImageContainer = styled(({ ...props }) => <ImageContainer max
   }
 `;
 
-export const StyledHeadingContainer = styled(({ ...props }) => <SectionInnerHeading {...props} />)`
+export const StyledHeadingContainer = styled(({ ...props }) => (
+  <SectionInnerHeading {...props} />
+))`
   font-weight: 600;
   font-size: 1.22rem;
   margin: 0 0 0.1rem 0;
@@ -49,7 +67,9 @@ export const StyledHeadingContainer = styled(({ ...props }) => <SectionInnerHead
   }
 `;
 
-export const StyledParagraph = styled(({ ...props }) => <SectionParagraph {...props} />)`
+export const StyledParagraph = styled(({ ...props }) => (
+  <SectionParagraph {...props} />
+))`
   padding-right: 2rem;
   font-weight: 450;
   margin: 0;

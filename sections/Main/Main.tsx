@@ -1,6 +1,5 @@
-import Image from "next/image";
-import { Card } from "~/collections";
-
+import { Card } from "@/collections";
+import { MainInterface } from "@/interfaces";
 import {
   StyledContainer,
   StyledTextContainer,
@@ -9,10 +8,16 @@ import {
   StyledImageContainer,
   StyledMainContainer,
   StyledCardsContainer,
-  StyledImageHolder,
+  StyledImage,
 } from "./elements";
 
-export const Main = ({ image, title, description, content, ...props }) => {
+export const Main = ({
+  image,
+  title,
+  description,
+  content,
+  ...props
+}: MainInterface) => {
   return (
     <StyledContainer {...props}>
       <StyledTextContainer>
@@ -21,9 +26,13 @@ export const Main = ({ image, title, description, content, ...props }) => {
       </StyledTextContainer>
       <StyledMainContainer>
         <StyledImageContainer>
-          <StyledImageHolder>
-            <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
-          </StyledImageHolder>
+          {/* It uses a styled next/image from elements */}
+          <StyledImage
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+          />
         </StyledImageContainer>
         <StyledCardsContainer>
           {content.map((item, index) => (

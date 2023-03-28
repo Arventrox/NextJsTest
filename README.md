@@ -1,20 +1,23 @@
+# Tested on node v18.11.0
+
 # Steps that i took in completing the task
 
-- 1. Configured the prettier config to mimic that of the original repo.
+1.  Looked through the project's structure and tried to follow the example.
 
-- 2. Looked through the project's structure and tried to follow the example.
+2.  Created and styled the base component's which i need for the task.
 
-- 3. Created and styled the base component's which i need for the task.
+3.  Based on the agencyselection.png created the desktop design.
 
-- 4. Based on the agencyselection.png created the desktop design.
+4.  Based on the mobileagencyselection.png created the mobile design.
 
-- 5. Based on the mobileagencyselection.png created the mobile design.
+5.  Added functions needed for the design and a hook folder with useMediaQuery hook.
 
-- 6. Added functions needed for the design and a hook folder with useMediaQuery hook.
+6.  Fixed semantics, styles, cleaned up and rewrote components.
 
-- 7. Fixed semantics, styles, cleaned up and rewrote components.
+7.  Added mobile design for the Hero section.
 
-- 8. Added mobile design for the Hero section.
+8.  Converted the project to typescript and the latest version of next.
+    -There is a separate branch without the updated next and typescript if there is a problem with this one.
 
 # The section that you need to create is shown in **agencyselection.png**
 

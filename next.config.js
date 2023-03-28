@@ -1,4 +1,10 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+
+const nextConfig = {
   reactStrictMode: true,
-  devtool: "inline-source-map",
+  compiler: {
+    styledComponents: true, // changed to boolean
+  },
 };
+
+module.exports = nextConfig;
